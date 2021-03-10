@@ -1,11 +1,8 @@
-class StudyItem
-  attr_accessor :title
+class StudyItem < ApplicationRecord
 
-  def initialize(title)
-    @title = title
-  end
-
-  def to_s
-    ">> #{@title}"
+  def full_title
+    "#{title} - #{category}"
   end
 end
+
+# rails migration = estrutura do db
