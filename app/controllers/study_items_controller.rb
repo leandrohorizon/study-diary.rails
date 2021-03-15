@@ -9,8 +9,7 @@ class StudyItemsController < ApplicationController
   end
 
   def create
-    si_params = params.require(:study_item).permit(:title, :category, :done)
-    @study_item = StudyItem.new(si_params)
+    @study_item = StudyItem.new(study_item_params)
 
     # @study_item.title = params[:study_item][:title]
     # @study_item.category = params[:study_item][:category]
@@ -24,4 +23,30 @@ class StudyItemsController < ApplicationController
       render "new"
     end
   end
+
+  def edit
+    set_study_item
+  end
+
+  def update
+    @study_item = StudyItem.find(params[:id])
+    if @study_item.update(study_item_params)
+      redirect_to study_item_path(@study_item)
+    end
+  end
+
+  def mark_as_done
+    set_study_item
+    @study_item.done!
+    redirect_to @study_item
+  end
+
+  private
+    def set_study_item
+      @study_item = StudyItem.find(params[:id])
+    end
+
+    def study_item_params
+      params.require(:study_item).permit(:title, :category_id, :done)
+    end
 end
