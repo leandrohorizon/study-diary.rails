@@ -1,6 +1,15 @@
+<h3>Categorias de Estudos</h3>
 <ul>
-  <% @study_items.each do |item| %>
-    <%= link_to(item.full_title, study_item_path(item.id)) %>
+  <% @categories.each do |category| %>
+    <%= link_to(category.title, category_path(category)) %>
   <% end %>
 </ul>
-<%= link_to('Cadastrar Novo Item', new_study_item_path) %>
+
+<h3>Itens de Estudos</h3>
+<ul>
+  <% @study_items.each do |study_item| %>
+    <%= link_to(study_item.full_title, study_item_path(study_item)) %>
+  <% end %>
+</ul>
+<%= link_to('Cadastrar Novo Item de Estudo', new_study_item_path) %>
+<%= link_to('Cadastrar Nova Categoria', new_category_path) %>

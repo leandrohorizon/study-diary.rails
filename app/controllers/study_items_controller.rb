@@ -1,5 +1,6 @@
 class StudyItemsController < ApplicationController
   before_action :set_study_item, only: %i[show edit update mark_as_done]
+
   def show; end
 
   def new

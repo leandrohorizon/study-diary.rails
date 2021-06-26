@@ -1,22 +1,24 @@
 <% study_item.errors.full_messages.each do |message| %>
 <p><%= message %></p>
-<% end %> <%= form_with(model: study_item) do |f| %>
-<div>
-  <%= f.label :title, 'Título' %> <%= f.text_field :title, required: "required"
-  %>
-</div>
+<% end %>
+<%= form_with(model: study_item) do |f| %>
+  <div>
+    <%= f.label :title, 'Título' %> <%= f.text_field :title, required: "required"
+    %>
+  </div>
 
-<div>
-  <%= f.label :category_id, 'Categoria' %> <%= f.collection_select :category_id,
-  Category.all, :id, :title %>
-</div>
+  <div>
+    <%= f.label :category_id, 'Categoria' %> <%= f.collection_select :category_id,
+    Category.all, :id, :title %>
+  </div>
 
-<div>
-  <!-- <span>Feito?</span> -->
-  <!-- <%= f.label :done, 'Sim' %> <%= f.radio_button :done, 'true' %>
-  <%= f.label :done, 'Não' %> <%= f.radio_button :done, 'false' %> -->
-  <%= f.check_box :done %>
-  <%= f.label :done, 'Feito?' %>
-</div>
+  <div>
+    <!-- <span>Feito?</span> -->
+    <!-- <%= f.label :done, 'Sim' %> <%= f.radio_button :done, 'true' %>
+    <%= f.label :done, 'Não' %> <%= f.radio_button :done, 'false' %> -->
+    <%= f.check_box :done %>
+    <%= f.label :done, 'Feito?' %>
+  </div>
 
-<%= f.submit %> <% end %>
+  <%= f.submit %>
+<% end %>

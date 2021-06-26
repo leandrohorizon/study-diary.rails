@@ -1,0 +1,8 @@
+<%= @category.title %>
+<%= link_to 'Editar', edit_category_path(@category) %>
+
+<ul>
+  <% @study_items.each do |study_item| %>
+    <%= link_to(study_item.full_title, study_item_path(study_item)) %>
+  <% end %>
+</ul>

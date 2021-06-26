@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :study_items, only: %i[show new create edit update] do
     patch 'mark_as_done', on: :member
-    get :hello_world, on: :collection
   end
+
+  resources :categories, except: %i[index destroy]
 end
