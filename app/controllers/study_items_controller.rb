@@ -29,10 +29,6 @@ class StudyItemsController < ApplicationController
     redirect_to @study_item
   end
 
-  def hello_world
-    render json: { message: 'Hello World' }
-  end
-
   private
 
   def set_study_item
