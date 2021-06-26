@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   # get '/', to: 'home#index' # ou root to: 'home#index'
   root to: 'home#index'
 
-  resources :study_items, only: [:show, :new, :create, :edit, :update] do
+  resources :study_items, only: %i[show new create edit update] do
     patch 'mark_as_done', on: :member
+    get :hello_world, on: :collection
   end
 end

@@ -1,7 +1,6 @@
 class StudyItemsController < ApplicationController
-  before_action :set_study_item, only: [:show, :edit, :update, :mark_as_done]
-  def show
-  end
+  before_action :set_study_item, only: %i[show edit update mark_as_done]
+  def show; end
 
   def new
     @study_item = StudyItem.new
@@ -19,8 +18,7 @@ class StudyItemsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     redirect_to study_item_path(@study_item) if @study_item.update(study_item_params)
