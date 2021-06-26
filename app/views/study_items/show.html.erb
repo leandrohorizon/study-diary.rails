@@ -4,8 +4,4 @@
 <%= button_to 'Marcar como feito', mark_as_done_study_item_path(@study_item), method: :patch %>
 
 
-<% if @study_item.done? %>
-  Feito
-<% else %>
-  Não Feito
-<% end %>
+<%= @study_item.done? ? 'Feito' : 'Não Feito' %>
