@@ -4,6 +4,7 @@
     <%= link_to(category.title, category_path(category)) %>
   <% end %>
 </ul>
+<%= link_to('Cadastrar Nova Categoria', new_category_path) %>
 
 <h3>Itens de Estudos</h3>
 <ul>
@@ -12,4 +13,3 @@
   <% end %>
 </ul>
 <%= link_to('Cadastrar Novo Item de Estudo', new_study_item_path) %>
-<%= link_to('Cadastrar Nova Categoria', new_category_path) %>
