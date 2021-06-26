@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @study_items = StudyItem.all()
+    @study_items = StudyItem.all
   end
 end
